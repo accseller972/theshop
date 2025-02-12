@@ -26,9 +26,11 @@
             margin-bottom: 10px; /* Space between image and text */
         }
 
-        .modal-content img {
-            width: 100%; /* Make modal images responsive */
-            border-radius: 10px; /* Optional: round the corners of the modal image */
+        .price {
+            font-size: 1.2em; /* Increase font size */
+            color: #00ffdd; /* Change color to match your theme */
+            margin-top: 10px; /* Add some space above the price */
+            font-weight: bold; /* Make the price bold */
         }
     </style>
 </head>
@@ -50,6 +52,7 @@
             <img src="images/Fischaccpic1.png" alt="FISCH Account" class="product-image"> <!-- Preview Image -->
             <h2>FISCH Account</h2>
             <p>Almost level 500 with 2 Ancient Megaladons see pictures for more info.</p>
+            <p class="price">$150</p> <!-- Price Element -->
         </div>
         <!-- Product Box End -->
 
@@ -58,16 +61,19 @@
             <img src="images/img4.jpg" alt="Luxury Bag" class="product-image"> <!-- Preview Image -->
             <h2>Luxury Bag</h2>
             <p>Crafted with the finest materials.</p>
+            <p class="price">$250</p> <!-- Price Element -->
         </div>
         <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['images/img7.jpg', 'images/img8.jpg', 'images/img9.jpg'])">
             <img src="images/img7.jpg" alt="Stylish Shoes" class="product-image"> <!-- Preview Image -->
             <h2>Stylish Shoes</h2>
             <p>Step into comfort and elegance.</p>
+            <p class="price">$100</p> <!-- Price Element -->
         </div>
         <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['images/img10.jpg', 'images/img11.jpg', 'images/img12.jpg'])">
             <img src="images/img10.jpg" alt="Classic Sunglasses" class="product-image"> <!-- Preview Image -->
             <h2>Classic Sunglasses</h2>
             <p>Perfect for any sunny day.</p>
+            <p class="price">$80</p> <!-- Price Element -->
         </div>
     </div>
 
@@ -77,7 +83,7 @@
             <span class="close-button" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">Product Name</h2>
             <p id="modalDescription">Detailed product information goes here.</p>
-            <div id=" carousel" class="carousel">
+            <div id="carousel" class="carousel">
                 <img id="carouselImage" src="" alt="Product Image">
                 <div id="imageCounter" class="image-counter">1/2</div>
                 <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
