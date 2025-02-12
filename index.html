@@ -20,28 +20,32 @@
     </div>
     <div class="products-container" id="productsContainer">
         <!-- Product Box Start -->
-        <div class="product-box" onclick="openModal('FISCH Account', 'Almost level 500 with 2 Ancient Megaladons see pictures for more info.', ['Fischaccpic1.png', 'Fischaccpic2.png', 'fischaccpic3.png'])">
-            <img src="Fischaccpic1.png" alt="FISCH Account" class="product-image"> <!-- Preview Image -->
+        <div class="product-box" onclick="openModal('FISCH Account', 'Almost level 500 with 2 Ancient Megaladons see pictures for more info.', ['images/Fischaccpic1.png', 'images/Fischaccpic2.png', 'images/fischaccpic3.png'])">
+            <img src="images/Fischaccpic1.png" alt="FISCH Account" class="product-image"> <!-- Preview Image -->
             <h2>FISCH Account</h2>
             <p>Almost level 500 with 2 Ancient Megaladons see pictures for more info.</p>
+            <p class="price">£150</p> <!-- Price Element -->
         </div>
         <!-- Product Box End -->
 
         <!-- Additional Product Boxes -->
-        <div class="product-box" onclick="openModal('Luxury Bag', 'Crafted with the finest materials.', ['img4.jpg', 'img5.jpg', 'img6.jpg'])">
-            <img src="img4.jpg" alt="Luxury Bag" class="product-image"> <!-- Preview Image -->
+        <div class="product-box" onclick="openModal('Luxury Bag', 'Crafted with the finest materials.', ['images/img4.jpg', 'images/img5.jpg', 'images/img6.jpg'])">
+            <img src="images/img4.jpg" alt="Luxury Bag" class="product-image"> <!-- Preview Image -->
             <h2>Luxury Bag</h2>
             <p>Crafted with the finest materials.</p>
+            <p class="price">£250</p> <!-- Price Element -->
         </div>
-        <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['img7.jpg', 'img8.jpg', 'img9.jpg'])">
-            <img src="img7.jpg" alt="Stylish Shoes" class="product-image"> <!-- Preview Image -->
+        <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['images/img7.jpg', 'images/img8.jpg', 'images/img9.jpg'])">
+            <img src="images/img7.jpg" alt="Stylish Shoes" class="product-image"> <!-- Preview Image -->
             <h2>Stylish Shoes</h2>
             <p>Step into comfort and elegance.</p>
+            <p class="price">£100</p> <!-- Price Element -->
         </div>
-        <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['img10.jpg', 'img11.jpg', 'img12.jpg'])">
-            <img src="img10.jpg" alt="Classic Sunglasses" class="product-image"> <!-- Preview Image -->
+        <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['images/img10.jpg', 'images/img11.jpg', 'images/img12.jpg'])">
+            <img src="images/img10.jpg" alt="Classic Sunglasses" class="product-image"> <!-- Preview Image -->
             <h2>Classic Sunglasses</h2>
             <p>Perfect for any sunny day.</p>
+            <p class="price">£80</p> <!-- Price Element -->
         </div>
     </div>
 
@@ -60,6 +64,14 @@
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Roblox Account Viewing. All rights reserved.</p>
+        <p>Follow us on social media!</p>
+        <a href="#" style="color: #00ffdd;">Facebook</a> | 
+        <a href="#" style="color: #00ffdd;">Twitter</a> | 
+        <a href="#" style="color: #00ffdd;">Instagram</a>
+    </footer>
+
     <script src="scripts.js"></script>
     <script>
         let currentImageIndex = 0;
@@ -75,7 +87,7 @@
                 if (productName.includes(searchInput)) {
                     productBoxes[i].style.display = '';
                 } else {
-                    productBoxes[i].style display = 'none';
+                    productBoxes[i].style.display = 'none';
                 }
             }
         }
@@ -87,29 +99,29 @@
             images = imageArray;
             currentImageIndex = 0;
             updateCarousel();
-            modal.style.display = 'block';
+            modal.style.display = 'block'; // Ensure the modal is displayed
         }
 
         function closeModal() {
             const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
+            modal.style.display = 'none'; // Hide the modal
         }
 
         function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Loop back to the last image
             updateCarousel();
         }
 
         function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
             updateCarousel();
         }
 
         function updateCarousel() {
             const carouselImage = document.getElementById('carouselImage');
-            carouselImage.src = images[currentImageIndex];
+            carouselImage.src = images[currentImageIndex]; // Update the image source
             const imageCounter = document.getElementById('imageCounter');
-            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
+            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`; // Update the image counter
         }
 
         function joinDiscord() {
