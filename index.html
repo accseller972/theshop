@@ -18,7 +18,7 @@
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
     </div>
-    <div class="products-container">
+    <div class="products-container" id="productsContainer">
         <!-- Product Box Start -->
         <div class="product-box" onclick="openModal('Elegant Watch', 'A timeless piece to elevate your style.', ['img1.jpg', 'img2.jpg'])">
             <h2>Elegant Watch</h2>
@@ -57,5 +57,41 @@
     </div>
 
     <script src="scripts.js"></script>
+    <script>
+        function filterProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const productsContainer = document.getElementById('productsContainer');
+            const productBoxes = productsContainer.getElementsByClassName('product-box');
+
+            for (let i = 0; i < productBoxes.length; i++) {
+                const productName = productBoxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (productName.includes(searchInput)) {
+                    productBoxes[i].style.display = '';
+                } else {
+                    productBoxes[i].style.display = 'none';
+                }
+            }
+        }
+
+        function openModal(title, description, images) {
+            // Your existing modal opening logic
+        }
+
+        function closeModal() {
+            // Your existing modal closing logic
+        }
+
+        function prevImage() {
+            // Your existing image carousel logic
+        }
+
+        function nextImage() {
+            // Your existing image carousel logic
+        }
+
+        function joinDiscord() {
+            // Your existing Discord join logic
+        }
+    </script>
 </body>
 </html>

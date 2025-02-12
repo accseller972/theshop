@@ -1,30 +1,36 @@
+/* Global Styles */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #121212;
     color: #ffffff;
     scroll-behavior: smooth;
 }
 
+/* Top Bar */
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #1f1f1f;
     color: white;
-    padding: 20px;
+    padding: 20px 40px;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Welcome Section */
 .welcome-section {
     text-align: center;
     padding: 50px;
+    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    border-bottom: 1px solid #444;
 }
 
+/* Search Bar */
 .search-bar {
     text-align: center;
     padding: 20px;
@@ -32,13 +38,20 @@ body, html {
 
 .search-bar input {
     width: 50%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 5px;
     border: 1px solid #444;
     background-color: #1f1f1f;
     color: white;
+    transition: border-color 0.3s;
 }
 
+.search-bar input:focus {
+    border-color: #00ffdd;
+    outline: none;
+}
+
+/* Products Container */
 .products-container {
     display: flex;
     flex-wrap: wrap;
@@ -47,6 +60,7 @@ body, html {
     gap: 20px;
 }
 
+/* Product Box */
 .product-box {
     background-color: #1f1f1f;
     border: 1px solid #444;
@@ -57,6 +71,7 @@ body, html {
     text-align: center;
     cursor: pointer;
     word-wrap: break-word;
+    transition: transform 0.3s, background-color 0.3s;
     animation: bob 5s infinite;
 }
 
@@ -71,8 +86,10 @@ body, html {
 
 .product-box:hover {
     background-color: #333;
+    transform: translateY(-5px);
 }
 
+/* Join Discord Button */
 .join-discord {
     background-color: #7289da;
     color: white;
@@ -80,12 +97,14 @@ body, html {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .join-discord:hover {
     background-color: #5b6eae;
 }
 
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -98,6 +117,7 @@ body, html {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Modal Content */
 .modal-content {
     background-color: #282828;
     margin: 15% auto;
@@ -106,13 +126,21 @@ body, html {
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
+    animation: fadeIn 0.5s;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Close Button */
 .close-button {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .close-button:hover, .close-button:focus {
@@ -121,6 +149,7 @@ body, html {
     cursor: pointer;
 }
 
+/* Carousel Styles */
 .carousel {
     position: relative;
     text-align: center;
@@ -131,6 +160,7 @@ body, html {
     border-radius: 10px;
 }
 
+/* Carousel Buttons */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -140,6 +170,12 @@ body, html {
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-button.prev {
@@ -150,6 +186,7 @@ body, html {
     right: 10px;
 }
 
+/* Image Counter */
 .image-counter {
     position: absolute;
     top: 10px;
@@ -158,4 +195,5 @@ body, html {
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
+    font-weight: bold;
 }
