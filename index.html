@@ -83,29 +83,29 @@
             images = imageArray;
             currentImageIndex = 0;
             updateCarousel();
-            modal.style.display = 'block';
+            modal.style.display = 'block'; // Ensure the modal is displayed
         }
 
         function closeModal() {
             const modal = document.getElementById('productModal');
-            modal.style.display = 'none';
+            modal.style.display = 'none'; // Hide the modal
         }
 
-        function prevImage() {
-            currentImageIndex = ( currentImageIndex - 1 + images.length) % images.length;
+ function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Loop back to the last image
             updateCarousel();
         }
 
         function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
             updateCarousel();
         }
 
         function updateCarousel() {
             const carouselImage = document.getElementById('carouselImage');
-            carouselImage.src = images[currentImageIndex];
+            carouselImage.src = images[currentImageIndex]; // Update the image source
             const imageCounter = document.getElementById('imageCounter');
-            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
+            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`; // Update the image counter
         }
 
         function joinDiscord() {
