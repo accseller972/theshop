@@ -229,7 +229,7 @@ body, html {
 .product-box h2, .product-box p {
     position: relative;
     z-index: 2;
-} ```css
+}
 /* Additional Product Box Styles */
 .product-box h2 {
     font-size: 1.8em; /* Increase heading size */
