@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="topbar">
+        <h1>Welcome to My Product Showcase</h1>
+        <button class="join-discord" onclick="joinDiscord()">Join Discord</button>
+    </div>
+    <div class="welcome-section">
+        <h2>Welcome!</h2>
+        <p>Explore our exclusive collection below.</p>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products..." onkeyup="filterProducts()">
+    </div>
+    <div class="products-container">
+        <!-- Product Box Start -->
+        <div class="product-box" onclick="openModal('Elegant Watch', 'A timeless piece to elevate your style.', ['img1.jpg', 'img2.jpg'])">
+            <h2>Elegant Watch</h2>
+            <p>A timeless piece to elevate your style.</p>
+        </div>
+        <!-- Product Box End -->
+
+        <!-- Additional Product Boxes -->
+        <div class="product-box" onclick="openModal('Luxury Bag', 'Crafted with the finest materials.', ['img3.jpg', 'img4.jpg'])">
+            <h2>Luxury Bag</h2>
+            <p>Crafted with the finest materials.</p>
+        </div>
+        <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['img5.jpg', 'img6.jpg'])">
+            <h2>Stylish Shoes</h2>
+            <p>Step into comfort and elegance.</p>
+        </div>
+        <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['img7.jpg', 'img8.jpg'])">
+            <h2>Classic Sunglasses</h2>
+            <p>Perfect for any sunny day.</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Product Name</h2>
+            <p id="modalDescription">Detailed product information goes here.</p>
+            <div id="carousel" class="carousel">
+                <img id="carouselImage" src="" alt="Product Image">
+                <div id="imageCounter" class="image-counter">1/2</div>
+                <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
+                <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
