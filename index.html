@@ -20,22 +20,22 @@
     </div>
     <div class="products-container" id="productsContainer">
         <!-- Product Box Start -->
-        <div class="product-box" onclick="openModal('Elegant Watch', 'A timeless piece to elevate your style.', ['img1.jpg', 'img2.jpg'])">
+        <div class="product-box" onclick="openModal('FISCH Account', 'Almost level 500 with 2 Ancient Megaladons see pictures for more info.', ['Fischaccpic1.png', 'Fischaccpic2.png', 'fischaccpic3.png'])">
             <h2>FISCH Account</h2>
             <p>Almost level 500 with 2 Ancient Megaladons see pictures for more info.</p>
         </div>
         <!-- Product Box End -->
 
         <!-- Additional Product Boxes -->
-        <div class="product-box" onclick="openModal('Luxury Bag', 'Crafted with the finest materials.', ['img3.jpg', 'img4.jpg'])">
+        <div class="product-box" onclick="openModal('Luxury Bag', 'Crafted with the finest materials.', ['img4.jpg', 'img5.jpg', 'img6.jpg'])">
             <h2>Luxury Bag</h2>
             <p>Crafted with the finest materials.</p>
         </div>
-        <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['img5.jpg', 'img6.jpg'])">
+        <div class="product-box" onclick="openModal('Stylish Shoes', 'Step into comfort and elegance.', ['img7.jpg', 'img8.jpg', 'img9.jpg'])">
             <h2>Stylish Shoes</h2>
             <p>Step into comfort and elegance.</p>
         </div>
-        <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['img7.jpg', 'img8.jpg'])">
+        <div class="product-box" onclick="openModal('Classic Sunglasses', 'Perfect for any sunny day.', ['img10.jpg', 'img11.jpg', 'img12.jpg'])">
             <h2>Classic Sunglasses</h2>
             <p>Perfect for any sunny day.</p>
         </div>
@@ -58,6 +58,9 @@
 
     <script src="scripts.js"></script>
     <script>
+        let currentImageIndex = 0;
+        let images = [];
+
         function filterProducts() {
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
             const productsContainer = document.getElementById('productsContainer');
@@ -73,20 +76,36 @@
             }
         }
 
-        function openModal(title, description, images) {
-            // Your existing modal opening logic
+        function openModal(title, description, imageArray) {
+            const modal = document.getElementById('productModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            images = imageArray;
+            currentImageIndex = 0;
+            updateCarousel();
+            modal.style.display = 'block';
         }
 
         function closeModal() {
-            // Your existing modal closing logic
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none';
         }
 
         function prevImage() {
-            // Your existing image carousel logic
+            currentImageIndex = ( currentImageIndex - 1 + images.length) % images.length;
+            updateCarousel();
         }
 
         function nextImage() {
-            // Your existing image carousel logic
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carouselImage = document.getElementById('carouselImage');
+            carouselImage.src = images[currentImageIndex];
+            const imageCounter = document.getElementById('imageCounter');
+            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`;
         }
 
         function joinDiscord() {
