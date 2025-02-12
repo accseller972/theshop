@@ -77,4 +77,70 @@
             <span class="close-button" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle">Product Name</h2>
             <p id="modalDescription">Detailed product information goes here.</p>
-            <div id="
+            <div id=" carousel" class="carousel">
+                <img id="carouselImage" src="" alt="Product Image">
+                <div id="imageCounter" class="image-counter">1/2</div>
+                <button class="carousel-button prev" onclick="prevImage()">&#10094;</button>
+                <button class="carousel-button next" onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        let currentImageIndex = 0;
+        let images = [];
+
+        function filterProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const productsContainer = document.getElementById('productsContainer');
+            const productBoxes = productsContainer.getElementsByClassName('product-box');
+
+            for (let i = 0; i < productBoxes.length; i++) {
+                const productName = productBoxes[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (productName.includes(searchInput)) {
+                    productBoxes[i].style.display = '';
+                } else {
+                    productBoxes[i].style.display = 'none';
+                }
+            }
+        }
+
+        function openModal(title, description, imageArray) {
+            const modal = document.getElementById('productModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            images = imageArray;
+            currentImageIndex = 0;
+            updateCarousel();
+            modal.style.display = 'block'; // Ensure the modal is displayed
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.style.display = 'none'; // Hide the modal
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length; // Loop back to the last image
+            updateCarousel();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const carouselImage = document.getElementById('carouselImage');
+            carouselImage.src = images[currentImageIndex]; // Update the image source
+            const imageCounter = document.getElementById('imageCounter');
+            imageCounter.textContent = `${currentImageIndex + 1}/${images.length}`; // Update the image counter
+        }
+
+        function joinDiscord() {
+            // Your existing Discord join logic
+        }
+    </script>
+</body>
+</html>
