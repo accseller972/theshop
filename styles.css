@@ -3,7 +3,8 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    background: url('images/space-background.jpg') no-repeat center center fixed; /* Space-themed background image */
+    background-size: cover; /* Cover the entire viewport */
     color: #ffffff;
     scroll-behavior: smooth;
 }
@@ -13,7 +14,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f1f1f;
+    background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent background */
     color: white;
     padding: 20px 40px;
     position: sticky;
@@ -26,7 +27,7 @@ body, html {
 .welcome-section {
     text-align: center;
     padding: 50px;
-    background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.8), rgba(42, 42, 42, 0.8));
     border-bottom: 1px solid #444;
 }
 
@@ -41,7 +42,7 @@ body, html {
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #444;
-    background-color: #1f1f1f;
+    background-color: rgba(31, 31, 31, 0.8);
     color: white;
     transition: border-color 0.3s;
 }
@@ -62,8 +63,8 @@ body, html {
 
 /* Product Box */
 .product-box {
-    background-color: #1f1f1f;
-    border: 1px solid #444;
+    background: rgba(42, 42, 42, 0.9); /* Dark semi-transparent background */
+    border: 2px solid #444;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px #00ffdd;
     padding: 20px;
@@ -72,21 +73,19 @@ body, html {
     cursor: pointer;
     word-wrap: break-word;
     transition: transform 0.3s, background-color 0.3s;
-    animation: bob 5s infinite;
-}
-
-@keyframes bob {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
 }
 
 .product-box:hover {
-    background-color: #333;
+    background-color: #333; /* Darker background on hover */
     transform: translateY(-5px);
+}
+
+/* Price Styling */
+.price {
+    font-size: 1.5em; /* Increase font size */
+    color: #00ffdd; /* Price color */
+    margin-top: 10px; /* Space above price */
+    font-weight: bold; /* Bold price */
 }
 
 /* Join Discord Button */
@@ -160,8 +159,7 @@ body, html {
     border-radius: 10px;
 }
 
-/* Carousel Buttons */
-.carousel-button {
+/* Carousel Buttons .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -198,8 +196,9 @@ body, html {
     font-weight: bold;
 }
 
+/* Additional Styles for Product Box */
 .product-box {
-    background: linear-gradient(135deg, #1f1f1f, #28343b);
+    background: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(40, 52, 59, 0.9));
     color: #ffffff;
     border: 2px solid #444;
     border-radius: 10px;
@@ -230,4 +229,56 @@ body, html {
 .product-box h2, .product-box p {
     position: relative;
     z-index: 2;
+} ```css
+/* Additional Product Box Styles */
+.product-box h2 {
+    font-size: 1.8em; /* Increase heading size */
+    margin: 10px 0; /* Space around heading */
+}
+
+.product-box p {
+    font-size: 1em; /* Standard paragraph size */
+    margin: 5px 0; /* Space around paragraph */
+}
+
+/* Button Styles */
+.button {
+    background-color: #00ffdd; /* Button color */
+    color: #121212; /* Text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #00ccaa; /* Darker button color on hover */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(31, 31, 31, 0.8);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column; /* Stack products vertically */
+        align-items: center; /* Center products */
+    }
+
+    .product-box {
+        width: 90%; /* Full width on smaller screens */
+    }
+
+    .search-bar input {
+        width: 80%; /* Wider search bar on mobile */
+    }
 }
